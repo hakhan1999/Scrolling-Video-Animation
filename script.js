@@ -63,6 +63,7 @@ function startAnimation() {
             end: 'bottom bottom'
         }
     })
+    
 
     tl.to(frames, {
         currentIndex: frames.maxIndex,
@@ -71,5 +72,11 @@ function startAnimation() {
         }
     })
 }
+
+window.addEventListener('resize', () => {
+    loadImage(Math.floor(frames.currentIndex))
+})
+
+
 
 preloadImages()  
