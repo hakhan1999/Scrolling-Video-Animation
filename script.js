@@ -63,7 +63,7 @@ function startAnimation() {
             end: 'bottom bottom'
         }
     })
-    
+
 
     tl.to(frames, {
         currentIndex: frames.maxIndex,
@@ -76,6 +76,14 @@ function startAnimation() {
 window.addEventListener('resize', () => {
     loadImage(Math.floor(frames.currentIndex))
 })
+
+const lenis = new Lenis()
+function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
 
 
 
